@@ -1,0 +1,277 @@
+/* Estilos globales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Onest';
+  src: url('font/Onest/Onest-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: 'Onest', sans-serif;
+  background-color: #020617;
+  color: #fff;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: #2cc9ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #00c9ff;
+}
+
+/* Menú */
+.menu {
+  font-size: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(8, 15, 34, 0.459);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list a {
+  color: #f0f0f0;
+  position: relative;
+  padding: 5px 0;
+}
+
+.menu-list a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00c9ff;
+  transition: width 0.3s;
+}
+
+.menu-list a:hover::after {
+  width: 100%;
+}
+
+/* Sección "Inicio" */
+#inicio {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 40px;
+}
+
+#inicio .content {
+  flex: 1;
+  max-width: 600px;
+}
+
+#inicio h1 {
+  font-size: 3rem;
+  margin-bottom: 0px;
+}
+
+#inicio h2 {
+  font-size: 1.2rem;
+  color: #33ff00ea; /* color de subtitulo "desarrollador full stack" */
+  margin-top: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 100; /* Le da un peso más delgado */
+}
+
+#inicio p {
+  font-size: 1.3rem;
+}
+
+#inicio .photo {
+  flex: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inicio .photo img {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border: 5px solid #2cc9ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#inicio .photo img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 201, 255, 0.5);
+}
+
+
+/* Estilos para la flecha rebotando */
+.scroll-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  color: #2cc9ff;
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Secciones generales */
+.section {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  border: 5px solid #2cc9ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-photo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 201, 255, 0.5);
+}
+
+/* Sección Tecnologías */
+#tecnologias {
+  background: linear-gradient(180deg, #080f22, #1b2033);
+  padding: 80px 20px;
+  padding-top: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.technology-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.technology-items {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.technology-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+.technology-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+  transition: transform 0.3s;
+}
+
+.technology-item img:hover {
+  transform: scale(1.1);
+}
+
+.technology-item p {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Sección Proyectos */
+#proyectos .project-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 20px;
+  width: 260px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+  color: #2cc6fc;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.card img:hover {
+  opacity: 1;
+}
+
+/* Responsividad */
+@media (min-width: 768px) {
+  .card {
+    width: 320px;
+  }
+}
+
+/* Estilos para la transición de desplazamiento suave */
+html {
+  scroll-behavior: smooth;
+}
